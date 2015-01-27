@@ -45,8 +45,11 @@ app.service('teamService', function($http, $q){
 			};
 			results.wins = wins;
 			results.losses = losses;
+			deferred.resolve(results);
+		}, function(error) {
+			deferred.reject(error);
 		})
-		return deferred.promise(results);
+		return deferred.promise;
 
 	};
 

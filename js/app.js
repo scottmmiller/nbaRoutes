@@ -1,6 +1,6 @@
 var app = angular.module('nbaRoutes', ['ngRoute']);
 
-app.config(function($routeProvider, $httpProvider, teamService){
+app.config(function($routeProvider, $httpProvider){
   $httpProvider.interceptors.push('httpRequestInterceptor');
 
   //router here
@@ -11,7 +11,7 @@ app.config(function($routeProvider, $httpProvider, teamService){
   		templateUrl: 'js/teams/teamTmpl.html',
   		controller: 'teamCtrl',
   		resolve: {
-  			teamData: function() {
+  			teamData: function($route, teamService) {
   				return teamService.getTeamData($route.current.params.team);
   			}
   		}
