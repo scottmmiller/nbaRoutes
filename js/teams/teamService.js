@@ -17,6 +17,12 @@ app.service('teamService', function($http, $q){
 			url: url,
 			data: gameObj
 
+		}).then(function(results) {
+			getTeamData($scope.newGame.homeTeam)
+
+		}).then(function(results) {
+			
+
 		});
 	};
 
