@@ -1,6 +1,6 @@
 var app = angular.module('nbaRoutes', ['ngRoute']);
 
-app.config(function($routeProvider, $httpProvider){
+app.config(function($routeProvider, $httpProvider, teamService){
   $httpProvider.interceptors.push('httpRequestInterceptor');
 
   //router here
@@ -13,8 +13,8 @@ app.config(function($routeProvider, $httpProvider){
   		resolve: {
   			teamData: function() {
   				return teamService.getTeamData($route.current.params.team);
-  			};
-  		};
+  			}
+  		}
   	}).otherwise('/');
 
 });
