@@ -1,7 +1,11 @@
 <!-- <div class="team-container">
  -->	<div class="team-data">
-	 		<div class='team-container' ng-repeat='team in teamData'>
+	 		<div class='team-container' ng-repeat='team in teamData | orderBy:value'>
 	 			<img ng-src='{{team.logo}}' />
+	 			  <div class="record">
+				      <h4> {{team.name}} <br />
+				      Wins: {{team.wins}} Losses: {{team.losses}} </h4>
+				  </div>
 	 			<div class="game" ng-repeat="game in team" ng-class="{'even' : $index % 2 === 0}">
 			    Date: {{game.createdAt | date}} <br />
 			    {{team.name}} - {{game.homeTeamScore}} <br />
