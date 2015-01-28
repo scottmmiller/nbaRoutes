@@ -4,7 +4,7 @@
 	 			<img ng-src='{{team.logo}}' />
 	 			<div class="game" ng-repeat="game in team" ng-class="{'even' : $index % 2 === 0}">
 			    Date: {{game.createdAt | date}} <br />
-			    {{game.homeTeam}} - {{game.homeTeamScore}} <br />
+			    {{team.name}} - {{game.homeTeamScore}} <br />
 			    {{game.opponent}} - {{game.opponentScore}} </br />
 		    	</div>
 		    </div>
